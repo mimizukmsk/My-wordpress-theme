@@ -18,3 +18,16 @@ add_theme_support('post-thumbnails');
 // ナビゲーションメニューを有効化
 register_nav_menu('header-nav', 'ヘッダーナビゲーション');
 register_nav_menu('footer-nav', 'フッターナビゲーション');
+
+// ヘッダーメニュー呼び出し
+function navbutton_scripts() {
+  wp_enqueue_script(
+    // 名前を付ける
+    'navbutton_script',
+    // 場所を指定
+    get_template_directory_uri() .'/js/navbutton.js',
+    // jQueryのみに依存しているので配列の項はひとつ
+    array('jquery')
+  );
+}
+add_action( 'wp_enqueue_scripts', 'navbutton_scripts');

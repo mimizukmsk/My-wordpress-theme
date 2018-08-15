@@ -115,3 +115,103 @@ footer {
   text-decoration: none;
   color: #000;
 }
+
+/* ヘッダナビゲーション */
+
+/* スマホ用ボタン */
+
+.header-inner {
+  position: relative;
+}
+
+#navbutton {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border: solid 1px #aaa;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+#navbutton:hover {
+  background-color: #ddd;
+}
+
+#navbutton:focus {
+  outline: none;
+}
+
+#navbutton i {
+  font-size: 2em;
+  color: #333;
+}
+
+#header-nav {
+  display: none;
+}
+
+.header-nav {
+  padding-left: 10px;
+}
+
+.header-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header-nav li a:before {
+  content: "\f0da";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #555;
+  font-size: 0.9em;
+  padding-right: 3px;
+}
+
+.header-nav li a {
+  display: block;
+  padding: 15px 5px;
+  color: #000;
+  font-weight: bold;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+.header-nav li a:hover {
+  opacity: 0.8;
+}
+
+/* PC表示字ヘッダーナビ */
+
+@media (min-width: 768px) {
+  #header-nav {
+    display: block !important;
+  }
+  .header-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  .header-nav ul:after {
+    display: block;
+    clear: both;
+    content '';
+  }
+  .header-nav li {
+    display: inline-block;
+    width: auto;
+  }
+  .header-nav li a {
+    font-size: 1.1em;
+    padding: 5px 10px;
+  }
+  #navbutton {
+    display: none;
+  }
+}
