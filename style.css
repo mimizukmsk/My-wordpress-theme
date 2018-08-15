@@ -89,15 +89,6 @@ iPadを基準(=タブレット以下スマートフォンにも適用)として7
   background-color: #aefffc;
 }
 
-footer {
-  background-color: #777;
-}
-
-.footer-inner {
-  background-color: #ddd;
-  height: 250px;
-}
-
 /* title */
 
 .site-title {
@@ -116,9 +107,9 @@ footer {
   color: #000;
 }
 
-/* ヘッダナビゲーション */
+/* header */
 
-/* スマホ用ボタン */
+/* スマホ用ヘッダーメニュー */
 
 .header-inner {
   position: relative;
@@ -169,7 +160,7 @@ footer {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   color: #555;
-  font-size: 0.9em;
+  font-size: .9em;
   padding-right: 3px;
 }
 
@@ -183,10 +174,10 @@ footer {
 }
 
 .header-nav li a:hover {
-  opacity: 0.8;
+  opacity: .8;
 }
 
-/* PC表示字ヘッダーナビ */
+/* PC用ヘッダーナビ */
 
 @media (min-width: 768px) {
   #header-nav {
@@ -214,4 +205,55 @@ footer {
   #navbutton {
     display: none;
   }
+}
+
+/* footer */
+
+footer {
+  background-color: #23282d;
+}
+
+/* スマホ用フッターメニュー */
+
+.footer-nav {
+  margin-bottom: 20px;
+}
+
+.footer-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-nav ul:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+.footer-nav li {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+
+.footer-nav li a {
+  font-size: .9em;
+  display: block;
+  padding: 10px 5px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer-nav li a:hover {
+  opacity: .6;
+}
+
+/* スマホ用コピーライト */
+
+.copyright p {
+  font-size: .9em;
+  margin: 0;
+  text-align: center;
+  color: #fff;
 }
