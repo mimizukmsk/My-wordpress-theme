@@ -12,5 +12,31 @@
 <body <?php body_class(); ?>>
 <header>
   <div class="header-inner">
+    <div class="site-title">
+      <!-- ヘッダータイトルに画像を使用する場合 -->
+      <!-- <h1><a href="<?php //echo home_url(); ?>">
+       <img src="URL" alt="<?php //bloginfo('name'); ?>">
+      </a></h1> -->
+      <!-- ヘッダータイトルをテキストにする場合 -->
+      <h1><a href="<?php echo home_url(); ?>">
+        <?php bloginfo('name'); ?>
+      </a></h1>
+    </div>
+    <!-- スマホ用メニューボタン -->
+    <button type="button" id="navbutton">
+      <i class="fas fa-list-ul"></i>
+    </button>
   </div>
+  <!-- ヘッダーメニュー -->
+  <?php wp_nav_menu( array(
+        // functions.phpで指定したメニュー名と対応
+        'theme_location' => 'header-nav',
+        // containerをどのタグで付加するか
+        'container' => 'nav',
+        // ｃcontainerのid, class名
+        'container_class' => 'header-nav',
+        'container_id' => 'header-nav',
+        // メニューが表示されない場合の値。初期値はwp_page_menuになっているため空白にする
+        'fallback_cb' => ''
+  )); ?>
 </header>

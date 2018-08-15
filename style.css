@@ -8,8 +8,6 @@ Version: 0.10
 
 /* サイト全体のCSS */
 
-/* body */
-
 body {
   font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "Noto Sans Japanese", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-size: 16px;
@@ -33,5 +31,87 @@ header {
 }
 
 footer {
-  border-top: 1px solid "ddd";
+  border-top: 1px solid #ddd;
+}
+
+/*
+メディアクエリ
+iPadを基準(=タブレット以下スマートフォンにも適用)として768px以下をスタイリング
+*/
+
+@media (min-width: 768px) {
+  /* コンテナー直後への擬似クラス :after の段階でclearを掛ける */
+  .container:after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+  .contents {
+    float: left;
+    width: 70%;
+    margin-right: 2%;
+  }
+  /* .contents + #sidebar で 100% になるように設定 */
+  #sidebar {
+    float: left;
+    width: 28%;
+  }
+}
+
+/* サイト全体のCSS(2) */
+
+.header-inner,
+.container,
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  /* 古いバージョンのブラウザへの対応(ベンダープレフィクス) -webkit-, -moz(illa)-, -o(pera)-, -ms(IE)- */
+  /* box-sizingは廃止する可能性があるのでベンダープレフィクスを付加しての使用が推奨されている */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.contents,
+#sidebar {
+  height: 800px;
+  margin: 20px 0;
+}
+
+/* 確認用 */
+
+.container {
+  background-color: #9db2ea;
+}
+
+#sidebar {
+  background-color: #aefffc;
+}
+
+footer {
+  background-color: #777;
+}
+
+.footer-inner {
+  background-color: #ddd;
+  height: 250px;
+}
+
+/* title */
+
+.site-title {
+  text-align: left;
+}
+
+.site-title h1 {
+  font-size: 2.4em;
+  margin: 0;
+  padding: 10px 5px 0;
+}
+
+.site-title h1 a {
+  display: block;
+  text-decoration: none;
+  color: #000;
 }

@@ -1,5 +1,6 @@
 <footer>
   <div class="footer-inner">
+
   </div>
 </footer>
 <!-- システム・プラグイン連携用 -->
