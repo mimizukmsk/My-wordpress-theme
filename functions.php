@@ -30,4 +30,18 @@ function navbutton_scripts() {
     array('jquery')
   );
 }
-add_action( 'wp_enqueue_scripts', 'navbutton_scripts');
+add_action('wp_enqueue_scripts', 'navbutton_scripts');
+
+// サイドバーウィジット追加
+function widgetarea_init() {
+  register_sidebar(array(
+    'name' => 'サイドバー',
+    'id' => 'side-widget',
+    // 各ウィジットごとの名前, 共通のクラス sidebar-wrapper を反映
+    'before_widget' => '<div id="%1$s" class="%2$s sidebar-wrapper">',
+    'after_widget' => '</div>',
+    'before_title' => '<h4 class="sidebar-title">',
+    'after_title' => '</h4>'
+  ));
+}
+add_action('widgets_init', 'widgetarea_init');
