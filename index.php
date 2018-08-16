@@ -8,7 +8,7 @@
           <?php if(has_post_thumbnail()): ?>
             <?php the_post_thumbnail('medium'); ?>
           <?php else: ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/images/no-image.gif" alt="no-img" width="150px">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/no-image.gif" alt="no-img">
             <?php endif; ?>
           <div class="text">
             <!-- タイトル -->
@@ -28,6 +28,8 @@
               </span>
               <?php endif; ?>
             <?php endif; ?>
+            <!-- 抜粋 -->
+            <?php the_excerpt(); ?>
           </div>
         </a>
       </article>

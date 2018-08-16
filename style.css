@@ -264,6 +264,93 @@ footer {
   }
 }
 
+/* index.php */
+
+/* スマホ用indexループ */
+
+@media (max-width: 599px) {
+  .kiji-list a {
+    padding: 10px;
+  }
+  .kiji-list img {
+    width: 100px;
+    height: 80px;
+  }
+  .kiji-list .text {
+    margin-left: 120px;
+  }
+  .kiji-list h2 {
+    font-size: .95em;
+  }
+  .kiji-date {
+    margin-bottom: 0;
+  }
+  .kiji-list p {
+    visibility: hidden;
+    height: 0;
+  }
+}
+
+/* PC用indexループ */
+
+.kiji-list {
+  margin: 0 0 15px;
+  border: solid 1px #ddd;
+  background-color: #fff;
+}
+
+.kiji-list a {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  color: #000;
+}
+
+.kiji-list a:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+.kiji-list a:hover {
+  background-color: #eee;
+}
+
+.kiji-list img {
+  float: left;
+  width: 220px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.kiji-list .text {
+  width: auto;
+  margin-left: 250px;
+}
+
+.kiji-list h2 {
+  font-size: 1.05em;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.kiji-date {
+  font-size: .8em;
+  margin-bottom: 8px;
+  color: #666;
+}
+
+.cat-data {
+  font-size: .6em;
+  padding: 3px 5px;
+  text-align: center;
+  white-space: nowrap;
+  color: #fff;
+  border-radius: 3px;
+  background-color: #464646;
+}
+
 /* sidebar */
 
 .sidebar-wrapper {
