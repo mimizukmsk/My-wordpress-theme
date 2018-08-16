@@ -6,6 +6,18 @@ Description: original theme
 Version: 0.10
 */
 
+/*
+参考 : https://plusers.net/wordpress_theme
+
+個人的な不満点 :
+リセットCSSの不在
+カテゴリー欄のレイアウト崩れ(.cat-tag へのスタイリングが二重になってる故か。他にも当該箇所があるかも)
+タグへ直接のスタイリングをしている(WPの自動生成の仕組み故か。要検討)
+ファイルを分けてスタイリング箇所を見やすくできないか
+スマートフォン用のmax-widthを統一・纏められないか
+
+*/
+
 /* サイト全体のCSS */
 
 body {
@@ -81,6 +93,8 @@ iPadを基準(=タブレット以下スマートフォンにも適用)として7
 
 /* title */
 
+/* メインタイトル */
+
 .site-title {
   text-align: left;
 }
@@ -89,12 +103,36 @@ iPadを基準(=タブレット以下スマートフォンにも適用)として7
   font-size: 2.4em;
   margin: 0;
   padding: 10px 5px 0;
+  font-weight: normal;
 }
 
 .site-title h1 a {
   display: block;
   text-decoration: none;
   color: #000;
+}
+
+.site-title p {
+  font-size: 12px;
+  padding: 0 5px;
+}
+
+/* カテゴリ・タグ一覧タイトル */
+
+.contents>h1 {
+  font-size: 1.5em;
+  margin: 0 0 20px;
+}
+
+@media (max-width: 599px) {
+  .contents>h1 {
+    font-size: 1.3em;
+  }
+}
+
+.contents>h1>i {
+  vertical-align: middle;
+  font-size: 0.7em;
 }
 
 /* header */
@@ -182,7 +220,7 @@ iPadを基準(=タブレット以下スマートフォンにも適用)として7
   .header-nav ul:after {
     display: block;
     clear: both;
-    content '';
+    content: '';
   }
   .header-nav li {
     display: inline-block;
@@ -351,6 +389,175 @@ footer {
   background-color: #464646;
 }
 
+/* ページネーション */
+
+.pagination {
+  margin: 40px 0 30px;
+  text-align: center;
+}
+
+.pagination ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pagination li {
+  display: inline-block;
+  width: auto;
+}
+
+.pagination li a,
+.pagination li>span {
+  font-size: .9em;
+  display: inline-block;
+  margin: 0 1px;
+  padding: 5px 5px;
+  text-decoration: none;
+  color: #000;
+  border: solid 1px #ccc;
+  border-radius: 3px;
+}
+
+.pagination li a:hover {
+  color: #fff;
+  background-color: #464646;
+}
+
+.pagination li .dots {
+  width: 15px;
+  padding: 0;
+  color: #000;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+/* single.php */
+
+/* PC用 single */
+
+.kiji {
+  font-size: 1em;
+  margin: 0;
+  padding: 0 25px 25px;
+  word-wrap: break-word;
+}
+
+.kiji-info .cat-data ul {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.kiji-info .cat-data li {
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.kiji-info .cat-data a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.kiji-info .cat-data a:hover {
+  opacity: .8;
+}
+
+.kiji-img {
+  max-width: 640px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+/* PC用 single タグ */
+
+.kiji-tag {
+  text-align: right;
+}
+
+.kiji-tag ul {
+  list-style: none;
+}
+
+.kiji-tag li a {
+  font-size: .8em;
+  margin-right: 7px;
+  padding: 2px 7px;
+  text-decoration: none;
+  color: #464646;
+  border: solid 1px #464646;
+  border-radius: 2px;
+}
+
+.kiji-tag li a:hover {
+  opacity: .8;
+}
+
+.kiji p {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.kiji h1 {
+  font-size: 1.7em;
+  margin: .5em 0;
+}
+
+.kiji h2 {
+  font-size: 1.5em;
+  margin-top: .3em;
+  margin-bottom: .5em;
+  padding: 0;
+  border-bottom: solid 5px #464646;
+}
+
+.kiji h3 {
+  font-size: 1.35em;
+  margin-top: 1em;
+  margin-bottom: .5em;
+  padding: 0 .5em;
+  border-left: solid 5px #777;
+  background: transparent;
+}
+
+.kiji h4 {
+  font-size: 1.2em;
+  margin: 0 0 .3em;
+}
+
+.kiji h5 {
+  font-size: 1.1em;
+  margin: 0 0 .3em;
+}
+
+/* スマホ用 single */
+
+@media (max-width: 599px) {
+  .kiji {
+    font-size: 92%;
+    padding: 0 10px 25px;
+  }
+  .kiji h1 {
+    font-size: 1.3em;
+  }
+  .kiji h2 {
+    font-size: 1.25em;
+  }
+  .kiji h3 {
+    font-size: 1.2em;
+  }
+  .kiji h3:after {
+    display: none;
+  }
+  .kiji h4 {
+    font-size: 1.15em;
+  }
+  .kiji h5 {
+    font-size: 1.1em;
+  }
+}
+
 /* sidebar */
 
 .sidebar-wrapper {
@@ -365,6 +572,10 @@ footer {
   padding: 7px 10px;
   color: #fff;
   background-color: #464646;
+}
+
+.sidebar-title {
+  font-weight: normal;
 }
 
 /*デフォルトウィジェット*/

@@ -1,6 +1,14 @@
 <?php get_header(); ?>
 <div class="container">
   <div class="contents">
+  <!-- カテゴリ・タグ一覧ページにタイトルを付与 -->
+  <?php if(is_category() || is_tag()): ?>
+    <h1><i class="fas fa-caret-down"></i> Posts of <?php single_cat_title() ?></h1>
+  <?php elseif(is_year()): ?>
+    <h1><i class="fas fa-caret-down"></i> Posts of <?php the_time("Y") ?>'s</h1>
+  <?php elseif(is_month()): ?>
+    <h1><i class="fas fa-caret-down"></i> Posts of <?php the_time("Y/m") ?>'s</h1>
+  <?php endif ?>
     <?php if(have_posts()): while(have_posts()): the_post(); ?>
       <article <?php post_class('kiji-list'); ?>>
         <a href="<?php the_permalink(); ?>">
@@ -34,6 +42,15 @@
         </a>
       </article>
     <?php endwhile; endif; ?>
+    <!-- ページネーション -->
+    <div class="pagination">
+      <?php echo paginate_links( array(
+        'type' => 'list',
+        'mid_size' => '1',
+        'prev_text' => 'Prev &laquo;',
+        'next_text' => 'Next &raquo;'
+      )); ?>
+    </div>
   </div>
   <?php get_sidebar(); ?>
 </div>
