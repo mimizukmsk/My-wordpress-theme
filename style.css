@@ -9,10 +9,10 @@ Version: 0.10
 /*
 参考 : https://plusers.net/wordpress_theme
 
-個人的な不満点 :
+気になる点 :
 リセットCSSの不在
 カテゴリー欄のレイアウト崩れ(.cat-tag へのスタイリングが二重になってる故か。他にも当該箇所があるかも)
-タグへ直接のスタイリングをしている(WPの自動生成の仕組み故か。要検討)
+タグへ直接のスタイリングをしている(WPの自動生成の仕組み故か。要勉強)
 ファイルを分けてスタイリング箇所を見やすくできないか
 スマートフォン用のmax-widthを統一・纏められないか
 
@@ -151,8 +151,8 @@ iPadを基準(=タブレット以下スマートフォンにも適用)として7
   cursor: pointer;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-  border: solid 1px #aaa;
-  border-radius: 5px;
+  border: none;
+  border-radius: 2px;
   background-color: #fff;
 }
 
@@ -237,10 +237,6 @@ iPadを基準(=タブレット以下スマートフォンにも適用)として7
 
 /* footer */
 
-footer {
-  background-color: #23282d;
-}
-
 /* スマホ用フッターメニュー */
 
 .footer-nav {
@@ -265,12 +261,21 @@ footer {
   text-align: center;
 }
 
+.footer-nav li a:before {
+  content: "\f0da";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #555;
+  font-size: .9em;
+  padding-right: 3px;
+}
+
 .footer-nav li a {
   font-size: .9em;
   display: block;
   padding: 10px 5px;
   text-decoration: none;
-  color: #fff;
+  color: #000;
 }
 
 .footer-nav li a:hover {
@@ -283,7 +288,6 @@ footer {
   font-size: .9em;
   margin: 0;
   text-align: center;
-  color: #fff;
 }
 
 /* PC用フッターナビ */
@@ -333,7 +337,7 @@ footer {
 
 .kiji-list {
   margin: 0 0 15px;
-  border: solid 1px #ddd;
+  /* border: solid 1px #000; */
   background-color: #fff;
 }
 
@@ -570,8 +574,8 @@ footer {
   margin-top: 0;
   margin-bottom: 10px;
   padding: 7px 10px;
-  color: #fff;
-  background-color: #464646;
+  border: 1px solid #000;
+  text-align: center;
 }
 
 .sidebar-title {
