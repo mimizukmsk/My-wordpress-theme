@@ -1,5 +1,5 @@
 jQuery(function () {
-  jQuery("#navbutton").click(function () {
-    jQuery("#header-nav").slideToggle();
+  jQuery(".nav-btn").click(function () {
+    jQuery(".header__nav").slideToggle();
   });
 });

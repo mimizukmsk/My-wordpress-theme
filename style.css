@@ -12,13 +12,13 @@ Version: 0.10
 気になる点 :
 リセットCSSの不在
 カテゴリー欄のレイアウト崩れ(.cat-tag へのスタイリングが二重になってる故か。他にも当該箇所があるかも)
-タグへ直接のスタイリングをしている(WPの自動生成の仕組み故か。要勉強)
+BEMりたい
 ファイルを分けてスタイリング箇所を見やすくできないか
 スマートフォン用のmax-widthを統一・纏められないか
 
 */
 
-/* サイト全体のCSS */
+/* 初期設定 */
 
 body {
   font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "Noto Sans Japanese", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
@@ -46,193 +46,142 @@ footer {
   border-top: 1px solid #ddd;
 }
 
-/*
-メディアクエリ
-iPadを基準(=タブレット以下スマートフォンにも適用)として768px以下をスタイリング
-*/
+/* Blocks */
 
-@media (min-width: 768px) {
-  /* コンテナー直後への擬似クラス :after の段階でclearを掛ける */
-  .container:after {
-    display: block;
-    clear: both;
-    content: '';
-  }
-  .contents {
-    float: left;
-    width: 70%;
-    margin-right: 2%;
-  }
-  /* .contents + #sidebar で 100% になるように設定 */
-  #sidebar {
-    float: left;
-    width: 28%;
-  }
-}
-
-/* サイト全体のCSS(2) */
-
-.header-inner,
-.container,
-.footer-inner {
+.container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 10px;
-  /* 古いバージョンのブラウザへの対応(ベンダープレフィクス) -webkit-, -moz(illa)-, -o(pera)-, -ms(IE)- */
-  /* box-sizingは廃止する可能性があるのでベンダープレフィクスを付加しての使用が推奨されている */
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.contents,
-#sidebar {
-  /* height: ; */
+.box {
+  float: left;
   margin: 20px 0;
 }
 
-/* title */
-
-/* メインタイトル */
-
-.site-title {
-  text-align: left;
-}
-
-.site-title h1 {
+.logo {
   font-size: 2.4em;
   margin: 0;
   padding: 10px 5px 0;
   font-weight: normal;
 }
 
-.site-title h1 a {
-  display: block;
-  text-decoration: none;
-  color: #000;
-}
-
-.site-title p {
+.desc {
   font-size: 12px;
   padding: 0 5px;
 }
 
-/* カテゴリ・タグ一覧タイトル */
-
-.contents>h1 {
-  font-size: 1.5em;
-  margin: 0 0 20px;
-}
-
-@media (max-width: 599px) {
-  .contents>h1 {
-    font-size: 1.3em;
-  }
-}
-
-.contents>h1>i {
-  vertical-align: middle;
-  font-size: 0.7em;
+.link {
+  text-decoration: none;
+  color: #000;
 }
 
 /* header */
 
+/* header__logo */
+
+.header__logo {
+  text-align: left;
+}
+
+.link--logo {
+  display: block;
+}
+
 /* スマホ用ヘッダーメニュー */
 
-.header-inner {
-  position: relative;
-}
-
-#navbutton {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  padding: 8px 12px;
-  cursor: pointer;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  border: none;
-  border-radius: 2px;
-  background-color: #fff;
-}
-
-#navbutton:hover {
-  background-color: #ddd;
-}
-
-#navbutton:focus {
-  outline: none;
-}
-
-#navbutton i {
-  font-size: 2em;
-  color: #333;
-}
-
-#header-nav {
-  display: none;
-}
-
-.header-nav {
-  padding-left: 10px;
-}
-
-.header-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.header-nav li a:before {
-  content: "\f0da";
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-  color: #555;
-  font-size: .9em;
-  padding-right: 3px;
-}
-
-.header-nav li a {
-  display: block;
-  padding: 15px 5px;
-  color: #000;
-  font-weight: bold;
-  font-size: 1em;
-  text-decoration: none;
-}
-
-.header-nav li a:hover {
-  opacity: .8;
+@media (max-width: 768px) {
+  .header-inner {
+    position: relative;
+  }
+  #navbutton {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border: none;
+    border-radius: 2px;
+    background-color: #fff;
+  }
+  #navbutton:hover {
+    background-color: #ddd;
+  }
+  #navbutton:focus {
+    outline: none;
+  }
+  #navbutton i {
+    font-size: 2em;
+    color: #333;
+  }
+  #header-nav {
+    display: none;
+  }
+  .header-nav {
+    padding-left: 10px;
+  }
+  .header-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .header-nav li a:before {
+    content: "\f0da";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #555;
+    font-size: .9em;
+    padding-right: 3px;
+  }
+  .header-nav li a {
+    display: block;
+    padding: 15px 5px;
+    color: #000;
+    font-weight: bold;
+    font-size: 1em;
+    text-decoration: none;
+  }
+  .header-nav li a:hover {
+    opacity: .8;
+  }
 }
 
 /* PC用ヘッダーナビ */
 
-@media (min-width: 768px) {
-  #header-nav {
-    display: block !important;
-  }
-  .header-nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 10px;
-    box-sizing: border-box;
-  }
-  .header-nav ul:after {
-    display: block;
-    clear: both;
-    content: '';
-  }
-  .header-nav li {
-    display: inline-block;
-    width: auto;
-  }
-  .header-nav li a {
-    font-size: 1.1em;
-    padding: 5px 10px;
-  }
-  #navbutton {
-    display: none;
-  }
+#header-nav {
+  display: block !important;
+}
+
+.header-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.header-nav ul:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+.header-nav li {
+  display: inline-block;
+  width: auto;
+}
+
+.header-nav li a {
+  font-size: 1.1em;
+  padding: 5px 10px;
+}
+
+#navbutton {
+  display: none;
 }
 
 /* footer */
@@ -308,6 +257,29 @@ iPadを基準(=タブレット以下スマートフォンにも適用)として7
 
 /* index.php */
 
+/* カテゴリ・タグ一覧タイトル */
+
+.box--contents {
+  width: 70%;
+  margin-right: 2%;
+}
+
+.contents>h1 {
+  font-size: 1.5em;
+  margin: 0 0 20px;
+}
+
+@media (max-width: 599px) {
+  .contents>h1 {
+    font-size: 1.3em;
+  }
+}
+
+.contents>h1>i {
+  vertical-align: middle;
+  font-size: 0.7em;
+}
+
 /* スマホ用indexループ */
 
 @media (max-width: 599px) {
@@ -334,6 +306,12 @@ iPadを基準(=タブレット以下スマートフォンにも適用)として7
 }
 
 /* PC用indexループ */
+
+.container--index:after {
+  display: block;
+  clear: both;
+  content: '';
+}
 
 .kiji-list {
   margin: 0 0 15px;

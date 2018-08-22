@@ -1,6 +1,6 @@
 <?php get_header(); ?>
-<div class="container">
-  <div class="contents">
+<div class="container container--index">
+  <div class="box box--contents">
   <!-- カテゴリ・タグ一覧ページにタイトルを付与 -->
   <?php if(is_category() || is_tag()): ?>
     <h1><i class="fas fa-caret-down"></i> Posts of <?php single_cat_title() ?></h1>
