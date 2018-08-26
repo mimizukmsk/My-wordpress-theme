@@ -10,12 +10,12 @@
 <body <?php body_class(); ?>>
 <header class="header">
   <div class="container container--header">
-    <div class="header__logo">
+    <section class="header__logo">
       <h1 class="logo"><a class="link link--logo" href="<?php echo home_url(); ?>">
         <?php bloginfo('name'); ?>
       </a></h1>
       <p class="desc"><?php bloginfo('description') ?></p>
-    </div>
+    </section>
     <!-- header-nav -->
     <button class="btn btn--nav-btn" type="button">
       <i class="fas fa-list-ul btn__icon"></i>

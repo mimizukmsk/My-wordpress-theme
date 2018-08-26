@@ -1,20 +1,20 @@
-<footer>
-  <div class="footer-inner">
-    <div class="footer-nav-area">
-      <?php wp_nav_menu( array(
+<footer class="footer">
+  <div class="container container--footer">
+    <?php wp_nav_menu( array(
             'theme_location' => 'footer-nav',
             'container' => 'nav',
-            'container_class' => 'footer-nav',
-            'container_id' => 'footer-nav',
+            'container_class' => 'footer__nav',
+            'container_id' => 'footer__nav',
             'fallback_cb' => ''
       )); ?>
-    </div>
-    <div class="copyright">
-      <p>copyright ©<?php bloginfo('name'); ?> All Rights Reserved.</p>
-    </div>
+    <section class="copyright">
+      <p class="desc desc--copyright">copyright ©
+        <?php bloginfo('name'); ?> All Rights Reserved.</p>
+    </section>
   </div>
 </footer>
 <!-- システム・プラグイン連携用 -->
 <?php wp_footer(); ?>
 </body>
+
 </html>

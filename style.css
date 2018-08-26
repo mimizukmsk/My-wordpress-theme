@@ -191,31 +191,38 @@ footer {
 
 /* footer */
 
-/* スマホ用フッターメニュー */
+/* PC用フッターナビ */
 
-.footer-nav {
+.footer__nav {
   margin-bottom: 20px;
 }
 
-.footer-nav ul {
+.footer__nav .menu {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.footer-nav ul:after {
+.footer__nav .menu:after {
   display: block;
   clear: both;
   content: '';
 }
 
-.footer-nav li {
-  float: left;
-  width: 50%;
-  text-align: center;
+.footer__nav .menu-item {
+  width: auto;
+  text-align: left;
 }
 
-.footer-nav li a:before {
+.footer__nav .menu-item a {
+  font-size: 1em;
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #000;
+}
+
+.footer__nav .menu-item a:before {
   content: "\f0da";
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
@@ -224,39 +231,30 @@ footer {
   padding-right: 3px;
 }
 
-.footer-nav li a {
-  font-size: .9em;
-  display: block;
-  padding: 10px 5px;
-  text-decoration: none;
-  color: #000;
-}
-
-.footer-nav li a:hover {
+.footer__nav .menu-item a:hover {
   opacity: .6;
 }
 
-/* スマホ用コピーライト */
-
-.copyright p {
-  font-size: .9em;
+.desc--copyright {
+  text-align: right;
   margin: 0;
-  text-align: center;
 }
 
-/* PC用フッターナビ */
+/* スマホ用フッターメニュー */
 
-@media (min-width: 768px) {
-  .footer-nav li {
-    width: auto;
-    text-align: left;
+@media (max-width: 768px) {
+  .footer__nav .menu-item {
+    float: left;
+    width: 50%;
+    text-align: center;
   }
-  .footer-nav li a {
-    font-size: 1em;
-    padding: 10px 20px;
+  .footer__nav .menu-item a {
+    font-size: .9em;
+    padding: 10px 5px;
   }
-  .copyright p {
-    text-align: right;
+  /* スマホ用コピーライト */
+  .desc--copyright {
+    text-align: center;
   }
 }
 
