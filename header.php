@@ -9,7 +9,7 @@
 </head>
 <body <?php body_class(); ?>>
 <header class="header">
-  <div class="container">
+  <div class="container container--header">
     <div class="header__logo">
       <h1 class="logo"><a class="link link--logo" href="<?php echo home_url(); ?>">
         <?php bloginfo('name'); ?>
@@ -18,7 +18,7 @@
     </div>
     <!-- header-nav -->
     <button class="btn btn--nav-btn" type="button">
-      <i class="fas fa-list-ul"></i>
+      <i class="fas fa-list-ul btn__icon"></i>
     </button>
   </div>
   <?php wp_nav_menu( array(

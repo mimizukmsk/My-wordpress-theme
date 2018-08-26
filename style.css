@@ -91,13 +91,66 @@ footer {
   display: block;
 }
 
-/* スマホ用ヘッダーメニュー */
+/* headernav for PC */
+
+.header__nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.header__nav a {
+  display: block;
+  padding: 5px 10px;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-decoration: none;
+}
+
+.header__nav .menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header__nav .menu:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+.header__nav .menu-item {
+  display: inline-block;
+  width: auto;
+}
+
+.header__nav .menu-item a:before {
+  content: "\f0da";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #555;
+  font-size: .9em;
+  padding-right: 3px;
+}
+
+.header__nav .menu-item a:hover {
+  opacity: .8;
+}
+
+.btn--nav-btn {
+  display: none;
+}
+
+/* header menu for smartphones */
 
 @media (max-width: 768px) {
-  .header-inner {
+  .container--header {
     position: relative;
   }
-  #navbutton {
+  .btn--nav-btn {
+    display: block;
     position: absolute;
     top: 50%;
     right: 10px;
@@ -109,79 +162,31 @@ footer {
     border-radius: 2px;
     background-color: #fff;
   }
-  #navbutton:hover {
+  .btn--nav-btn:hover {
     background-color: #ddd;
   }
-  #navbutton:focus {
+  .btn--nav-btn:focus {
     outline: none;
   }
-  #navbutton i {
+  .btn__icon {
     font-size: 2em;
     color: #333;
   }
-  #header-nav {
+  /* header nav */
+  .header__nav {
     display: none;
-  }
-  .header-nav {
     padding-left: 10px;
   }
-  .header-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  .header__nav .menu:after {
+    display: none;
   }
-  .header-nav li a:before {
-    content: "\f0da";
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    color: #555;
-    font-size: .9em;
-    padding-right: 3px;
-  }
-  .header-nav li a {
+  .header__nav .menu-item {
     display: block;
-    padding: 15px 5px;
-    color: #000;
-    font-weight: bold;
+  }
+  .header__nav .menu-item a {
     font-size: 1em;
-    text-decoration: none;
+    padding: 15px 5px;
   }
-  .header-nav li a:hover {
-    opacity: .8;
-  }
-}
-
-/* PC用ヘッダーナビ */
-
-#header-nav {
-  display: block !important;
-}
-
-.header-nav {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 10px;
-  box-sizing: border-box;
-}
-
-.header-nav ul:after {
-  display: block;
-  clear: both;
-  content: '';
-}
-
-.header-nav li {
-  display: inline-block;
-  width: auto;
-}
-
-.header-nav li a {
-  font-size: 1.1em;
-  padding: 5px 10px;
-}
-
-#navbutton {
-  display: none;
 }
 
 /* footer */
