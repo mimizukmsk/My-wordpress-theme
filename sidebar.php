@@ -1,6 +1,6 @@
-<aside class="sidebar">
+<aside class="box box--sidebar">
   <!-- サイドバー。ウィジェットを設定する際に使用する -->
-  <div class="box box--sidebar">
+  <div class="sidebar-inner">
     <?php dynamic_sidebar('side-widget'); ?>
   </div>
 </aside>

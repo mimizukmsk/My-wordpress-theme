@@ -1,37 +1,40 @@
 <?php get_header(); ?>
 <!-- 投稿ページ（記事ページ用）-->
 <div class="container">
-  <div class="contents">
+  <div class="box box--contents">
     <?php if (have_posts()): the_post(); ?>
-    <article <?php post_class('kiji'); ?>>
+    <article <?php post_class('post'); ?>>
       <!-- 投稿日・著者を表示 -->
-      <div class="kiji-info">
+      <section class="post__info">
         <!-- 投稿日を取得 -->
-        <span class="kiji-date">
-          <i class="fas fa-pencil-alt"></i>
+        <span class="post__posted-at">
+          <i class="fas fa-pencil-alt icon"></i>
           <time datetime="<?php echo get_the_date('Y/m/d'); ?>">
             <?php echo get_the_date(); ?>
           </time>
         </span>
         <!-- カテゴリ取得 -->
         <?php if(has_category()): ?>
-        <span class="cat-data">
-          <?php echo get_the_category_list(); ?>
-        </span>
+          <?php $postcat = get_the_category(); ?>
+          <?php for ($i = 0; $i < count($postcat); $i++ ): ?>
+        <a class="cat post__cat--post" href="<?php echo get_category_link($postcat[$i]->term_id); ?>">
+          <?php echo $postcat[$i]->name; ?>
+        </a>
+          <?php endfor ?>
         <?php endif; ?>
-      </div>
-      <!-- タイトル -->
-      <h1><?php the_title(); ?></h1>
-      <!-- アイキャッチ取得 -->
-      <?php if(has_post_thumbnail()): ?>
-      <div class="kiji-img">
-        <?php the_post_thumbnail(array(620, 620)); ?>
-      </div>
-      <?php endif; ?>
+        <!-- タイトル -->
+        <h1 class="post__title"><?php the_title(); ?></h1>
+        <!-- アイキャッチ取得 -->
+        <?php if(has_post_thumbnail()): ?>
+          <?php the_post_thumbnail(array(620, 620)); ?>
+        <?php endif; ?>
+      </section>
       <!-- 本文を取得 -->
-      <?php the_content(); ?>
+      <section class="post__body">
+        <?php the_content(); ?>
+      </section>
       <!-- タグ -->
-      <div class="kiji-tag">
+      <div class="post__tag">
         <?php the_tags('<ul><li>Tags : </li><li>','</li><li>','</li></ul>'); ?>
       </div>
     </article>

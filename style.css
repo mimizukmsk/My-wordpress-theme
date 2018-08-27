@@ -57,6 +57,12 @@ footer {
   box-sizing: border-box;
 }
 
+.container:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
 .box {
   float: left;
   margin: 20px 0;
@@ -80,8 +86,25 @@ footer {
 }
 
 .icon {
-  vertical-align: middle;
   font-size: 0.8em;
+}
+
+.cat {
+  padding: 1px 5px;
+  color: #fff;
+  border-radius: 3px;
+  background-color: #464646;
+}
+
+/* for smartphones */
+
+@media (max-width: 768px) {
+  .container:after {
+    display: none;
+  }
+  .box {
+    float: none;
+  }
 }
 
 /*** header.php ***/
@@ -269,7 +292,7 @@ footer {
   margin-right: 2%;
 }
 
-/* List title for category, y/m */
+/* List title for cat, y/m */
 
 .list-title {
   font-size: 1.5em;
@@ -277,19 +300,7 @@ footer {
   font-weight: normal;
 }
 
-@media (max-width: 768px) {
-  .list-title {
-    font-size: 1.3em;
-  }
-}
-
 /* Index loop fot PC */
-
-.container--index:after {
-  display: block;
-  clear: both;
-  content: '';
-}
 
 .post-list {
   margin: 0 0 15px;
@@ -313,16 +324,20 @@ footer {
   background-color: #eee;
 }
 
-.post-list__link .wp-post-image {
-  float: left;
-  width: 220px;
-  height: 150px;
-  object-fit: cover;
-}
-
 .post-list__index {
   width: auto;
-  margin-left: 250px;
+}
+
+.index__img {
+  float: left;
+  width: 40%;
+  margin-right: 1em;
+}
+
+.index__img .wp-post-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .index__title {
@@ -338,15 +353,11 @@ footer {
   color: #666;
 }
 
-.index__category {
-  font-size: .7em;
-  padding: 1px 5px;
-  margin-left: 10px;
-  text-align: center;
+.cat--index {
   white-space: nowrap;
-  color: #fff;
-  border-radius: 3px;
-  background-color: #464646;
+  text-align: center;
+  font-size: .7em;
+  margin-left: 10px;
 }
 
 .index__excerpt {
@@ -356,15 +367,14 @@ footer {
 /* Index loop for smartphones */
 
 @media (max-width: 768px) {
+  .box--contents {
+    width: 100%;
+  }
+  .list-title {
+    font-size: 1.3em;
+  }
   .post-list__link {
     padding: 10px;
-  }
-  .post-list__link .wp-post-image {
-    width: 100px;
-    height: 80px;
-  }
-  .post-list__index {
-    margin-left: 120px;
   }
   .index__title {
     font-size: 1em;
@@ -437,44 +447,55 @@ footer {
   word-wrap: break-word;
 }
 
-.post-info .post-category ul {
+.post__info ul {
   display: inline-block;
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-.kiji-info .cat-data li {
+.post__info li {
   display: inline-block;
   padding: 0 5px;
 }
 
-.kiji-info .cat-data a {
-  text-decoration: none;
-  color: #fff;
+.post__posted-at {
+  font-size: 0.9em;
+  margin-right: 10px;
 }
 
-.kiji-info .cat-data a:hover {
+.post__cat--post {
+  display: inline-block;
+  font-size: 0.7em;
+  text-decoration: none;
+  vertical-align: 10%;
+}
+
+.post__cat--post:hover {
   opacity: .8;
 }
 
-.kiji-img {
-  max-width: 640px;
+.post__title {
+  font-size: 1.7em;
+  margin: .5em 0;
+}
+
+.post__info .wp-post-image {
+  max-width: 100%;
+  height: auto;
   margin: 30px auto;
   text-align: center;
 }
 
-/* PC用 single タグ */
-
-.kiji-tag {
+.post__tag {
   text-align: right;
 }
 
-.kiji-tag ul {
+.post__tag ul {
   list-style: none;
 }
 
-.kiji-tag li a {
+.post__tag li a {
   font-size: .8em;
   margin-right: 7px;
   padding: 2px 7px;
@@ -484,21 +505,21 @@ footer {
   border-radius: 2px;
 }
 
-.kiji-tag li a:hover {
+.post__tag li a:hover {
   opacity: .8;
 }
 
-.kiji p {
+.post__body p {
   margin-top: 0;
   margin-bottom: 30px;
 }
 
-.kiji h1 {
+.post__body h1 {
   font-size: 1.7em;
   margin: .5em 0;
 }
 
-.kiji h2 {
+.post__body h2 {
   font-size: 1.5em;
   margin-top: .3em;
   margin-bottom: .5em;
@@ -506,8 +527,8 @@ footer {
   border-bottom: solid 5px #464646;
 }
 
-.kiji h3 {
-  font-size: 1.35em;
+.post__body h3 {
+  font-size: 1.3em;
   margin-top: 1em;
   margin-bottom: .5em;
   padding: 0 .5em;
@@ -515,44 +536,51 @@ footer {
   background: transparent;
 }
 
-.kiji h4 {
+.post__body h4 {
   font-size: 1.2em;
   margin: 0 0 .3em;
 }
 
-.kiji h5 {
+.post__body h5 {
   font-size: 1.1em;
   margin: 0 0 .3em;
 }
 
-/* スマホ用 single */
+/* Single page for smartphones */
 
-@media (max-width: 599px) {
-  .kiji {
+@media (max-width: 768px) {
+  .post {
     font-size: 92%;
     padding: 0 10px 25px;
   }
-  .kiji h1 {
+  .post__body h1 {
     font-size: 1.3em;
   }
-  .kiji h2 {
+  .post__body h2 {
     font-size: 1.25em;
   }
-  .kiji h3 {
+  .post__body h3 {
     font-size: 1.2em;
   }
-  .kiji h3:after {
+  .post__body h3:after {
     display: none;
   }
-  .kiji h4 {
+  .post__body h4 {
     font-size: 1.15em;
   }
-  .kiji h5 {
+  .post__body h5 {
     font-size: 1.1em;
   }
 }
 
-/* sidebar */
+/*** sidebar.php ***/
+
+/* Sidebar for PC */
+
+.box--sidebar {
+  float: left;
+  width: 28%;
+}
 
 .sidebar-wrapper {
   margin-bottom: 1.8em;
@@ -572,7 +600,15 @@ footer {
   font-weight: normal;
 }
 
-/*デフォルトウィジェット*/
+/* Sidebar for smartphones */
+
+@media (max-width: 768px) {
+  .box--sidebar {
+    width: 100%;
+  }
+}
+
+/* Widgets */
 
 .widget_recent_entries ul,
 .widget_meta ul,
