@@ -37,6 +37,7 @@
       <div class="post__tag">
         <?php the_tags('<ul><li>Tags : </li><li>','</li><li>','</li></ul>'); ?>
       </div>
+      <?php comments_template(); ?>
     </article>
     <?php endif; ?>
   </div>
