@@ -1,6 +1,6 @@
 <div class="comments">
 <?php if( have_comments() ): ?>
-  <h3>Comment</h3>
+  <h3 class="comments__title">Comment</h3>
   <ul class="comments__list">
     <?php wp_list_comments(); ?>
   </ul>

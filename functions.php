@@ -47,4 +47,4 @@ function widgetarea_init() {
 add_action('widgets_init', 'widgetarea_init');
 
 // コメント欄
-include 'function-comment.php';
+// include 'function-comment.php';
