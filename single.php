@@ -23,14 +23,14 @@
           <?php endfor ?>
         <?php endif; ?>
         <!-- タイトル -->
-        <h1 class="post__title"><?php the_title(); ?></h1>
+        <h1 class="title title--post"><?php the_title(); ?></h1>
         <!-- アイキャッチ取得 -->
         <?php if(has_post_thumbnail()): ?>
           <?php the_post_thumbnail(array(620, 620)); ?>
         <?php endif; ?>
       </section>
       <!-- 本文を取得 -->
-      <section class="post__body">
+      <section class="main-contents">
         <?php the_content(); ?>
       </section>
       <!-- タグ -->
