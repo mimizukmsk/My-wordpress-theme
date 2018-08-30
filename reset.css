@@ -36,10 +36,6 @@ article, header, footer, aside, figure, figcaption, nav, section {
   display: block;
 }
 
-a {
-  /* text-decoration: none; */
-}
-
 ol, ul {
   list-style: none;
   list-style-type: none;

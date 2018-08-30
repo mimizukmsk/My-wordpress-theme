@@ -19,17 +19,17 @@
   'fields' => array(
     'author' =>
     '<div class="comment-form__author">'.
-      '<p><label for="author">Name'.
+      '<h5><label for="author">Name'.
         ( $req ? '<span class="comment-form__required">*</span>' : '').
-      '</label></p>'.
+      '</label></h5>'.
       '<input id="author" name="author" type="text" value="'.
         esc_attr( $commenter['comment_author']).
         '"></div>',
     'email' =>
     '<div class="comment-form__email">'.
-      '<p><label for="email">E-mail'.
+      '<h5><label for="email">E-mail'.
         ( $req ? '<span class="comment-form__required">*</span>' : '').
-      '</label></p>'.
+      '</label></h5>'.
       '<input id="email" name="email" type="email" value="'.
         esc_attr( $commenter['comment_author_email']).
         '"></div>'
@@ -37,11 +37,11 @@
   'title_reply' => 'Comment Form',
   'title_reply_to' => "Leave a Reply to %s",
   'comment_notes_before' =>
-    '<span class="comment-form__required">*</span> がついている項目は必須項目となります。',
+    '<p><span class="comment-form__required">*</span> がついている項目は必須項目となります。</p>',
   'comment_field' =>
     '<div class="comment-form__comment">'.
-      '<p><label for="comment">Comment <span class="comment-form__required">*</span>'.
-      '</label></p>'.
+      '<h5><label for="comment">Comment <span class="comment-form__required">*</span>'.
+      '</label></h5>'.
       '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>'.
     '</div>',
   'label_submit' => 'Post Comment'
