@@ -1,0 +1,107 @@
+/* Header logo */
+
+.header__logo {
+  text-align: left;
+}
+
+.link--logo {
+  display: block;
+}
+
+/* Header nav for PC */
+
+.header__nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.header__nav a {
+  display: block;
+  padding: 5px 10px;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-decoration: none;
+}
+
+.header__nav .menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header__nav .menu::after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+.header__nav .menu-item {
+  display: inline-block;
+  width: auto;
+}
+
+.header__nav .menu-item a::before {
+  content: "\f0da";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #74685d;
+  font-size: .9em;
+  padding-right: 3px;
+}
+
+.header__nav .menu-item a:hover {
+  opacity: .8;
+}
+
+.btn--nav-btn {
+  display: none;
+}
+
+/* Header nav(button) for smartphones */
+
+@media (max-width: 768px) {
+  .container--header {
+    position: relative;
+  }
+  .btn--nav-btn {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border: none;
+    border-radius: 2px;
+    background-color: #fff;
+  }
+  .btn--nav-btn:hover {
+    background-color: #ddd;
+  }
+  .btn--nav-btn:focus {
+    outline: none;
+  }
+  .btn__icon {
+    font-size: 2em;
+    color: #3f3b33;
+  }
+  /* header nav */
+  .header__nav {
+    display: none;
+    padding-left: 10px;
+  }
+  .header__nav .menu:after {
+    display: none;
+  }
+  .header__nav .menu-item {
+    display: block;
+  }
+  .header__nav .menu-item a {
+    font-size: 1em;
+    padding: 15px 5px;
+  }
+}
