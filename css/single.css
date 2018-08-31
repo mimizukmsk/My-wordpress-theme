@@ -1,0 +1,137 @@
+/* Single page for PC */
+
+.post {
+  font-size: 1em;
+  margin: 0;
+  padding: 0 25px 25px;
+  word-wrap: break-word;
+}
+
+.post__info ul {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post__info li {
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.post__posted-at {
+  font-size: 0.9em;
+  margin-right: 10px;
+}
+
+.post__cat--post {
+  display: inline-block;
+  font-size: 0.7em;
+  text-decoration: none;
+  vertical-align: 10%;
+}
+
+.post__cat--post:hover {
+  opacity: .8;
+}
+
+.post__info .wp-post-image {
+  max-width: 100%;
+  height: auto;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.main-contents p {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.main-contents h1 {
+  font-size: 2.7rem;
+  margin: 1rem 0;
+  padding: 1rem 2rem ;
+  background-color: #3f3b33;
+  color: #fff;
+}
+
+.main-contents h2 {
+  font-size: 1.5em;
+  margin-top: .3em;
+  margin-bottom: .5em;
+  padding: 0;
+  border-bottom: solid 5px #74685d;
+}
+
+.main-contents h3 {
+  font-size: 1.3em;
+  margin-top: 1em;
+  margin-bottom: .5em;
+  padding: 0 .5em;
+  border-left: solid 5px #74685d;
+  background: transparent;
+}
+
+.main-contents h4 {
+  font-size: 1.2em;
+  margin: 0 0 .3em;
+  padding: 0 .5em;
+  border-left: solid 3px #74685d;
+}
+
+.main-contents h5 {
+  font-size: 1.1em;
+  margin: 0 0 .3em;
+  padding: 0 .5em;
+}
+
+.post__tag {
+  text-align: right;
+  padding-bottom: 25px;
+  border-bottom: 1px dashed #e7cbb0;
+}
+
+.post__tag ul {
+  list-style: none;
+}
+
+.post__tag li a {
+  font-size: .8em;
+  margin-right: 7px;
+  padding: 2px 7px;
+  text-decoration: none;
+  color: #666;
+  border: solid 1px #3f3b33;
+  border-radius: 2px;
+}
+
+.post__tag li a:hover {
+  opacity: .8;
+}
+
+/* Single page for smartphones */
+
+@media (max-width: 768px) {
+  .post {
+    font-size: 92%;
+    padding: 0 10px 25px;
+  }
+  .post__body h1 {
+    font-size: 1.3em;
+  }
+  .post__body h2 {
+    font-size: 1.25em;
+  }
+  .post__body h3 {
+    font-size: 1.2em;
+  }
+  .post__body h3:after {
+    display: none;
+  }
+  .post__body h4 {
+    font-size: 1.15em;
+  }
+  .post__body h5 {
+    font-size: 1.1em;
+  }
+}

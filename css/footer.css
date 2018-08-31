@@ -1,0 +1,65 @@
+/* Footer nav for PC */
+
+.footer__nav {
+  margin-bottom: 20px;
+}
+
+.footer__nav .menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__nav .menu::after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+.footer__nav .menu-item {
+  width: auto;
+  text-align: left;
+}
+
+.footer__nav .menu-item a {
+  font-size: 1em;
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #000;
+}
+
+.footer__nav .menu-item a::before {
+  content: "\f0da";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #74685d;
+  font-size: .9em;
+  padding-right: 3px;
+}
+
+.footer__nav .menu-item a:hover {
+  opacity: .6;
+}
+
+.desc--copyright {
+  text-align: right;
+  margin: 0;
+}
+
+/* Footer nav for smartphones */
+
+@media (max-width: 768px) {
+  .footer__nav .menu-item {
+    float: left;
+    width: 50%;
+    text-align: center;
+  }
+  .footer__nav .menu-item a {
+    font-size: .9em;
+    padding: 10px 5px;
+  }
+  .desc--copyright {
+    text-align: center;
+  }
+}

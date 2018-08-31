@@ -18,8 +18,6 @@
           <section class="index__img">
             <?php if(has_post_thumbnail()): ?>
               <?php the_post_thumbnail(); ?>
-            <?php else: ?>
-            <img class="wp-post-image" src="<?php echo get_template_directory_uri(); ?>/images/no-image.gif" alt="no-img">
             <?php endif; ?>
           </section>
           <!-- タイトル -->

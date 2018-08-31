@@ -1,0 +1,181 @@
+/* Sidebar for PC */
+.box--sidebar {
+  width: 28%;
+}
+
+.sidebar-wrapper {
+  margin-bottom: 1.8em;
+  padding: 10px;
+  font-size: 1.5rem;
+}
+
+.sidebar-wrapper h4 {
+  font-size: 1.7rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding: 7px 10px;
+  border: 1px solid #74685d;
+  text-align: center;
+}
+
+.sidebar-title {
+  font-weight: normal;
+}
+
+/* Sidebar for smartphones */
+
+@media (max-width: 768px) {
+  .box--sidebar {
+    width: 100%;
+  }
+}
+
+/* Widgets */
+
+.widget_recent_entries ul,
+.widget_meta ul,
+.widget_recent_comments ul,
+.widget_pages ul,
+.widget_categories ul,
+.widget_archive ul {
+  padding: 0;
+  list-style: none;
+}
+
+.widget_recent_entries li,
+.widget_meta li,
+.widget_recent_comments li,
+.widget_pages li,
+.widget_categories li,
+.widget_archive li {
+  position: relative;
+  padding: 10px;
+}
+
+.widget_recent_entries li {
+  padding-left: 25px;
+}
+
+.widget_recent_entries a,
+.widget_meta a,
+.widget_recent_comments a,
+.widget_pages a,
+.widget_categories a,
+.widget_archive a {
+  color: #333;
+}
+
+.widget_recent_entries a:hover,
+.widget_meta a:hover,
+.widget_recent_comments a:hover,
+.widget_pages a:hover,
+.widget_categories a:hover,
+.widget_archive a:hover {
+  opacity: .6;
+}
+
+/* Search */
+.screen-reader-text {
+  display: none;
+}
+.search-form {
+  font-size: 0;
+  width: 95%;
+  margin: 0 auto;
+}
+.search-form > * {
+  font-size: 1.2rem;
+}
+.search-field {
+  width: 80%;
+  height: 26px;
+  padding: 10px;
+  border: 1px solid #74685d;
+  border-radius: 3px;
+}
+.search-submit {
+  width: 18%;
+  height: 26px;
+  border: none;
+  vertical-align: top;
+  background-color: #74685d;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+/* Recent posts */
+.widget_recent_entries li {
+  padding: 5px;
+  padding-left: 25px;
+}
+.widget_recent_entries li + li {
+  border-top: 1px dashed #e7cbb0;
+}
+
+/* Recent comments */
+.widget_recent_comments li {
+  padding: 5px;
+}
+.widget_recent_comments li + li {
+  border-top: 1px dashed #e7cbb0;
+}
+
+/* Archive */
+.widget_archive li {
+  padding: 5px;
+}
+.widget_archive li + li {
+  border-top: 1px dashed #e7cbb0;
+}
+
+/* Category */
+.widget_categories li {
+  display: inline-block;
+  margin: 2px;
+  padding: 2px 10px;
+  white-space: nowrap;
+  border-radius: 3px;
+  background-color: #74685d;
+}
+.widget_categories li:before {
+  font-family: 'Font Awesome 5 Free';
+  font-size: .8em;
+  font-weight: bold;
+  padding-right: 2px;
+  content: '\f02b';
+  color: #fff;
+}
+.widget_categories li a {
+  text-decoration: none;
+  font-size: .8em;
+  color: #fff;
+}
+
+/*新着ウィジェット*/
+
+.widget_recent_entries li:before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: bold;
+  position: absolute;
+  left: 5px;
+  content: '\f303';
+  color: #74685d;
+}
+
+/*カレンダーウィジェット*/
+
+#wp-calendar {
+  width: 100%;
+}
+#wp-calendar tbody {
+  text-align: center;
+}
+#wp-calendar td a{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  background-color: #3f3b33;
+  color: #fff;
+}

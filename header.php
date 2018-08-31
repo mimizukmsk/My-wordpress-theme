@@ -17,9 +17,13 @@
       <p class="desc"><?php bloginfo('description') ?></p>
     </section>
     <!-- header-nav -->
-    <button class="btn btn--nav-btn" type="button">
-      <i class="fas fa-list-ul btn__icon"></i>
-    </button>
+    <div class="header__nav-btn">
+      <a class="nav-btn__trigger" href="#">
+        <span class="trigger__line"></span>
+        <span class="trigger__line"></span>
+        <span class="trigger__line"></span>
+      </a>
+    </div>
   </div>
   <?php wp_nav_menu( array(
         'theme_location' => 'header-nav',

@@ -5,13 +5,15 @@ Template Name: 固定ページテンプレート
 ?>
 <?php get_header(); ?>
 <div class="container">
-  <div class="contents">
+  <div class="box box--contents">
     <?php if (have_posts()): the_post(); ?>
-    <article <?php post_class('About-Profile'); ?>
+    <article <?php post_class('post'); ?>>
       <!-- タイトル -->
-      <h1><?php the_title(); ?></h1>
+      <h1 class="title"><?php the_title(); ?></h1>
       <!-- 本文を取得 -->
-      <?php the_content(); ?>
+      <section class="main-contents">
+        <?php the_content(); ?>
+      </section>
     </article>
     <?php endif; ?>
   </div>
