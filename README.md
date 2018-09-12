@@ -1,7 +1,7 @@
 # My-wordpress-theme
 mimizuk (Twitter: @fu_wo_msk)
 
-The original theme for blog under development.
+The original theme for blog under development.  
 Those that are implemented are focused on the basic functions of the blog and the minimum design.
 
 - Page index
