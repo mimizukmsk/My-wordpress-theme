@@ -6,7 +6,7 @@ Those that are implemented are focused on the basic functions of the blog and th
 - Article page, Single page
 - Comment function (Reply only from poster)
 
-The actual operation site is as follows.
+The actual operation site is 
 [Prog-ress](https://prog-ress.site/)
 
 Created by mimizuk (Twitter: @fu_wo_msk)
