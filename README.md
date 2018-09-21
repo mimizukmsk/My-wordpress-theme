@@ -1,6 +1,4 @@
 # My-wordpress-theme
-mimizuk (Twitter: @fu_wo_msk)
-
 The original theme for blog under development.  
 Those that are implemented are focused on the basic functions of the blog and the minimum design.
 
@@ -10,3 +8,5 @@ Those that are implemented are focused on the basic functions of the blog and th
 
 The actual operation site is as follows.
 [Prog-ress](https://prog-ress.site/)
+
+Created by mimizuk (Twitter: @fu_wo_msk)
