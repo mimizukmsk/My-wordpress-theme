@@ -1,6 +1,6 @@
 # My Wordpress Theme(WIP)
 The original theme for blog.  
-Those that are implemented are focused on the basic functions of the blog and the minimum design.
+At implementing, focused on the basic functions of the blog and the minimum design.
 
 - Page index
 - Article page, Single page
